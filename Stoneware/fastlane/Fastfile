@@ -11,14 +11,30 @@ platform :ios do
     )
   end
 
+  desc "Ensure App Store distribution cert + provisioning profile exist"
+  lane :signing do
+    cert(
+      development: false,
+      output_path: "../Export/cert"
+    )
+    sigh(
+      app_identifier: "com.stoneware.app",
+      adhoc: false,
+      development: false,
+      output_path: "../Export/profile"
+    )
+  end
+
   desc "Build the app"
   lane :build do
+    signing
     build_app(
       project: "../Stoneware.xcodeproj",
       scheme: "Stoneware",
       export_method: "app-store",
       output_directory: "../Export",
-      output_name: "Stoneware.ipa"
+      output_name: "Stoneware.ipa",
+      skip_profile_detection: false
     )
   end
 

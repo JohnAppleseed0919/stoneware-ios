@@ -15,11 +15,13 @@ scheme("Stoneware")
 
 project("../Stoneware.xcodeproj")
 
-derived_data_path("../build/DerivedData")
-
 number_of_retries(0)
 stop_after_first_error(true)
 erase_simulator(false)
 reinstall_app(true)
 concurrent_simulators(false)
 headless(true)
+
+# No signing for sim builds
+xcargs("CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO")
+skip_open_summary(true)
