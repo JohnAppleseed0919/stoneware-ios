@@ -4,11 +4,9 @@ struct PieceCard: View {
     let piece: Piece
     let units: UnitsManager
     var onAdvance: () -> Void
-    var onTap: () -> Void
 
     var body: some View {
-        Button(action: onTap) {
-            VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: 0) {
                 ZStack(alignment: .bottomLeading) {
                     VesselCover(seed: piece.id, coverIndex: piece.coverIndex, photoData: piece.photoData, cornerRadius: 0)
                         .frame(height: 160)
@@ -80,9 +78,10 @@ struct PieceCard: View {
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
                     .stroke(Color.primary.opacity(0.08), lineWidth: 1)
             )
-            .opacity(piece.stage == .archived ? 0.7 : 1)
-        }
-        .buttonStyle(.plain)
+        .opacity(piece.stage == .archived ? 0.7 : 1)
+        .accessibilityIdentifier("piece-card-\(piece.name)")
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(piece.name)
     }
 
     private var subtitle: String {

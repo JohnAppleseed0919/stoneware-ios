@@ -40,8 +40,7 @@ struct DashboardView: View {
                                         PieceCard(
                                             piece: piece,
                                             units: units,
-                                            onAdvance: { advance(piece) },
-                                            onTap: {}
+                                            onAdvance: { advance(piece) }
                                         )
                                     }
                                     .buttonStyle(.plain)

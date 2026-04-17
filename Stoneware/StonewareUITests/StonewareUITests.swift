@@ -12,22 +12,24 @@ final class StonewareUITests: XCTestCase {
     }
 
     func testSnapshots() throws {
-        // 1. Dashboard
         sleep(2)
         snapshot("01-dashboard")
 
-        // 2. Tap first piece card → detail view
-        let firstCard = app.buttons.containing(NSPredicate(format: "label CONTAINS[c] 'mug' OR label CONTAINS[c] 'bowl' OR label CONTAINS[c] 'tile'")).firstMatch
-        if firstCard.waitForExistence(timeout: 3) {
-            firstCard.tap()
+        // Tap the first piece card (seed data includes "Speckled morning mug")
+        let mug = app.buttons["Speckled morning mug"]
+        if mug.waitForExistence(timeout: 3) {
+            mug.tap()
             sleep(2)
             snapshot("02-detail")
 
-            // Scroll down for glazes + firings
+            // Scroll to glaze section
             app.swipeUp()
             sleep(1)
-            snapshot("03-glazes")
+            snapshot("03-glaze-layers")
 
+            // Scroll to timeline
+            app.swipeUp()
+            sleep(1)
             app.swipeUp()
             sleep(1)
             snapshot("04-timeline")
@@ -37,10 +39,10 @@ final class StonewareUITests: XCTestCase {
             sleep(1)
         }
 
-        // 3. New piece sheet
-        let newPieceButton = app.buttons["New piece"].firstMatch
-        if newPieceButton.waitForExistence(timeout: 3) {
-            newPieceButton.tap()
+        // New piece sheet — tap the FAB (contains "New piece" label)
+        let newPieceBtn = app.buttons.matching(NSPredicate(format: "label CONTAINS 'New piece'")).firstMatch
+        if newPieceBtn.waitForExistence(timeout: 3) {
+            newPieceBtn.tap()
             sleep(2)
             snapshot("05-new-piece")
         }
