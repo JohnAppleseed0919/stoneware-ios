@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10CB7C1E1D4A2893BABFA01F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D71575ED412C0CFEAF8CE0 /* Assets.xcassets */; };
+		3109C4DDB783560A325A5720 /* PieceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFB50BD2790E2ABD571C752 /* PieceDetailView.swift */; };
+		5543CE7583731E04DBF2289A /* StageChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90780AEDA806F2DA7C4B832C /* StageChip.swift */; };
+		6D2F00D6088FE2D610B6093E /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97543DE8E287F51760609A34 /* Piece.swift */; };
+		6F985FB33F331372FD22F332 /* StonewareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3241BE26D39D95F6D22ED3A1 /* StonewareApp.swift */; };
+		78E1A17BE27E28014E7D2344 /* NewPieceSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98793817B980FFA0569A3AD /* NewPieceSheet.swift */; };
+		7EAE102E58368C5BC924AD7A /* UnitsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34C8260353DD5123AD49D2B /* UnitsManager.swift */; };
+		A05406B6FC54DD51DDF1FB85 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F72B56B9546E68FE968FBA6 /* DashboardView.swift */; };
+		AAE148F4E7A788138F245BBD /* SettingsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5AE41E3AD1B7A9EC03B11B /* SettingsSheet.swift */; };
+		CB89B1AD19C7201A21008FFF /* PieceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2287D08BE921DA396D150D55 /* PieceCard.swift */; };
+		D531DE005A817AA910392C4D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DF44BEBD33DBE8C875E9C9 /* SnapshotHelper.swift */; };
+		E27522F13E7F714B526E6E8B /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C99C7F0E9982C9547625 /* Palette.swift */; };
+		E979BE1C457A7777C17A6D7C /* VesselCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8C3B949022303335025F2E /* VesselCover.swift */; };
+		EF9BBAC89230DAE87A784D86 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5658B273898A668F12746A /* Haptics.swift */; };
+		F895358A49C160049C4029A5 /* StonewareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64332A55FDBB7395C23DF3F9 /* StonewareUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D67B699C3E5FAC7138B3256F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E2953AB3BFCD83FE5F464C53 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B1B12CA2173C54E15CB3123;
+			remoteInfo = Stoneware;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B8C3B949022303335025F2E /* VesselCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VesselCover.swift; sourceTree = "<group>"; };
+		0FFB50BD2790E2ABD571C752 /* PieceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceDetailView.swift; sourceTree = "<group>"; };
+		1F72B56B9546E68FE968FBA6 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		2287D08BE921DA396D150D55 /* PieceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceCard.swift; sourceTree = "<group>"; };
+		25DF44BEBD33DBE8C875E9C9 /* SnapshotHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		3241BE26D39D95F6D22ED3A1 /* StonewareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StonewareApp.swift; sourceTree = "<group>"; };
+		38B8C99C7F0E9982C9547625 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		45D71575ED412C0CFEAF8CE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6087A0C537F0C728ACA9F5C5 /* Stoneware.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Stoneware.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64332A55FDBB7395C23DF3F9 /* StonewareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StonewareUITests.swift; sourceTree = "<group>"; };
+		90780AEDA806F2DA7C4B832C /* StageChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageChip.swift; sourceTree = "<group>"; };
+		97543DE8E287F51760609A34 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
+		A34C8260353DD5123AD49D2B /* UnitsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitsManager.swift; sourceTree = "<group>"; };
+		A98793817B980FFA0569A3AD /* NewPieceSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPieceSheet.swift; sourceTree = "<group>"; };
+		DA5658B273898A668F12746A /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		E316A149824AF8252B5619F8 /* StonewareUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = StonewareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE5AE41E3AD1B7A9EC03B11B /* SettingsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSheet.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		417E9318D7E37BF57922C1F6 /* Stoneware */ = {
+			isa = PBXGroup;
+			children = (
+				E17B1E18F9C3313ABA14989E /* Stoneware */,
+				7E9126199656E2CE5EA3D7D7 /* StonewareUITests */,
+			);
+			path = Stoneware;
+			sourceTree = "<group>";
+		};
+		67A697C5CA3A4ABB04AA599D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1F72B56B9546E68FE968FBA6 /* DashboardView.swift */,
+				A98793817B980FFA0569A3AD /* NewPieceSheet.swift */,
+				2287D08BE921DA396D150D55 /* PieceCard.swift */,
+				0FFB50BD2790E2ABD571C752 /* PieceDetailView.swift */,
+				EE5AE41E3AD1B7A9EC03B11B /* SettingsSheet.swift */,
+				90780AEDA806F2DA7C4B832C /* StageChip.swift */,
+				0B8C3B949022303335025F2E /* VesselCover.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7E9126199656E2CE5EA3D7D7 /* StonewareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				25DF44BEBD33DBE8C875E9C9 /* SnapshotHelper.swift */,
+				64332A55FDBB7395C23DF3F9 /* StonewareUITests.swift */,
+			);
+			path = StonewareUITests;
+			sourceTree = "<group>";
+		};
+		8B230946024DF99ACA8F5E84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				97543DE8E287F51760609A34 /* Piece.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		906FE04B88585EEF85ABA39B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6087A0C537F0C728ACA9F5C5 /* Stoneware.app */,
+				E316A149824AF8252B5619F8 /* StonewareUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E02F2A9DE31E96AF0B629C02 = {
+			isa = PBXGroup;
+			children = (
+				417E9318D7E37BF57922C1F6 /* Stoneware */,
+				906FE04B88585EEF85ABA39B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E17B1E18F9C3313ABA14989E /* Stoneware */ = {
+			isa = PBXGroup;
+			children = (
+				8B230946024DF99ACA8F5E84 /* Models */,
+				E9CDA4CECE9FDE5EF1AAE411 /* Services */,
+				67A697C5CA3A4ABB04AA599D /* Views */,
+				45D71575ED412C0CFEAF8CE0 /* Assets.xcassets */,
+				3241BE26D39D95F6D22ED3A1 /* StonewareApp.swift */,
+			);
+			path = Stoneware;
+			sourceTree = "<group>";
+		};
+		E9CDA4CECE9FDE5EF1AAE411 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DA5658B273898A668F12746A /* Haptics.swift */,
+				38B8C99C7F0E9982C9547625 /* Palette.swift */,
+				A34C8260353DD5123AD49D2B /* UnitsManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B1B12CA2173C54E15CB3123 /* Stoneware */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA05EFCBC4541A4EEF48B118 /* Build configuration list for PBXNativeTarget "Stoneware" */;
+			buildPhases = (
+				381C5A891F6D465DC2E54935 /* Sources */,
+				7A2FEEAE47F4640B1A744561 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Stoneware;
+			packageProductDependencies = (
+			);
+			productName = Stoneware;
+			productReference = 6087A0C537F0C728ACA9F5C5 /* Stoneware.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C54A44208F3980C64D462C20 /* StonewareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E972CFAF91AABF5FBC66FA8B /* Build configuration list for PBXNativeTarget "StonewareUITests" */;
+			buildPhases = (
+				1A014DE6F11A0C20DE77BD8F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				240418F562056C818EC90A3E /* PBXTargetDependency */,
+			);
+			name = StonewareUITests;
+			packageProductDependencies = (
+			);
+			productName = StonewareUITests;
+			productReference = E316A149824AF8252B5619F8 /* StonewareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E2953AB3BFCD83FE5F464C53 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6B1B12CA2173C54E15CB3123 = {
+						DevelopmentTeam = 6G3Q27J6NB;
+					};
+					C54A44208F3980C64D462C20 = {
+						DevelopmentTeam = 6G3Q27J6NB;
+						TestTargetID = 6B1B12CA2173C54E15CB3123;
+					};
+				};
+			};
+			buildConfigurationList = D2614C7686CF1E89BD480D29 /* Build configuration list for PBXProject "Stoneware" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E02F2A9DE31E96AF0B629C02;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 906FE04B88585EEF85ABA39B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B1B12CA2173C54E15CB3123 /* Stoneware */,
+				C54A44208F3980C64D462C20 /* StonewareUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A2FEEAE47F4640B1A744561 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10CB7C1E1D4A2893BABFA01F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A014DE6F11A0C20DE77BD8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D531DE005A817AA910392C4D /* SnapshotHelper.swift in Sources */,
+				F895358A49C160049C4029A5 /* StonewareUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		381C5A891F6D465DC2E54935 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A05406B6FC54DD51DDF1FB85 /* DashboardView.swift in Sources */,
+				EF9BBAC89230DAE87A784D86 /* Haptics.swift in Sources */,
+				78E1A17BE27E28014E7D2344 /* NewPieceSheet.swift in Sources */,
+				E27522F13E7F714B526E6E8B /* Palette.swift in Sources */,
+				6D2F00D6088FE2D610B6093E /* Piece.swift in Sources */,
+				CB89B1AD19C7201A21008FFF /* PieceCard.swift in Sources */,
+				3109C4DDB783560A325A5720 /* PieceDetailView.swift in Sources */,
+				AAE148F4E7A788138F245BBD /* SettingsSheet.swift in Sources */,
+				5543CE7583731E04DBF2289A /* StageChip.swift in Sources */,
+				6F985FB33F331372FD22F332 /* StonewareApp.swift in Sources */,
+				7EAE102E58368C5BC924AD7A /* UnitsManager.swift in Sources */,
+				E979BE1C457A7777C17A6D7C /* VesselCover.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		240418F562056C818EC90A3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B1B12CA2173C54E15CB3123 /* Stoneware */;
+			targetProxy = D67B699C3E5FAC7138B3256F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		41CA9AE323AF7769324938DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Stoneware/Stoneware/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stoneware.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		67C150282A8497B1250E6B4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stoneware.app.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Stoneware;
+			};
+			name = Debug;
+		};
+		7BCD3D6CCE0FF2BB2AE6640C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stoneware.app.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Stoneware;
+			};
+			name = Release;
+		};
+		84690F891784DDCDCDAD4B66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Stoneware/Stoneware/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.stoneware.app;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9E1F021082C20A0C75C5F5A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6G3Q27J6NB;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D1C5396E762F71945F1ED11B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6G3Q27J6NB;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2614C7686CF1E89BD480D29 /* Build configuration list for PBXProject "Stoneware" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1C5396E762F71945F1ED11B /* Debug */,
+				9E1F021082C20A0C75C5F5A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E972CFAF91AABF5FBC66FA8B /* Build configuration list for PBXNativeTarget "StonewareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67C150282A8497B1250E6B4F /* Debug */,
+				7BCD3D6CCE0FF2BB2AE6640C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EA05EFCBC4541A4EEF48B118 /* Build configuration list for PBXNativeTarget "Stoneware" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84690F891784DDCDCDAD4B66 /* Debug */,
+				41CA9AE323AF7769324938DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E2953AB3BFCD83FE5F464C53 /* Project object */;
+}

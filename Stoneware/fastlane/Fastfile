@@ -14,11 +14,11 @@ platform :ios do
   desc "Build the app"
   lane :build do
     build_app(
-      workspace: "ClayLab.xcodeproj/project.xcworkspace",
-      scheme: "ClayLab",
+      workspace: "Stoneware.xcodeproj/project.xcworkspace",
+      scheme: "Stoneware",
       export_method: "app-store",
       output_directory: "../Export",
-      output_name: "ClayLab.ipa"
+      output_name: "Stoneware.ipa"
     )
   end
 
@@ -59,9 +59,9 @@ platform :ios do
   desc "Bump build number"
   lane :bump do
     increment_build_number(
-      xcodeproj: "ClayLab.xcodeproj"
+      xcodeproj: "Stoneware.xcodeproj"
     )
-    build_number = get_build_number(xcodeproj: "ClayLab.xcodeproj")
+    build_number = get_build_number(xcodeproj: "Stoneware.xcodeproj")
     UI.success("Build number bumped to #{build_number}")
   end
 
@@ -73,7 +73,7 @@ platform :ios do
   desc "Pre-submission checks"
   lane :preflight do
     # Check build number was bumped
-    build_number = get_build_number(xcodeproj: "ClayLab.xcodeproj")
+    build_number = get_build_number(xcodeproj: "Stoneware.xcodeproj")
     UI.message("Current build number: #{build_number}")
 
     # Check metadata files exist
@@ -120,7 +120,7 @@ platform :ios do
   desc "Quick submit: upload IPA and submit (skip screenshots)"
   lane :submit do
     deliver(
-      ipa: "../Export/ClayLab.ipa",
+      ipa: "../Export/Stoneware.ipa",
       skip_screenshots: true,
       force: true,
       submit_for_review: true,

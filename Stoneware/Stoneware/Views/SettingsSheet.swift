@@ -40,7 +40,7 @@ struct SettingsSheet: View {
                         InfoRow(label: "Storage", value: "On-device, SwiftData")
                     }
 
-                    Text("ClayLab · Local-first · Your data lives on this device.")
+                    Text("Stoneware · Local-first · Your data lives on this device.")
                         .font(.system(size: 11, weight: .medium))
                         .tracking(1.2)
                         .foregroundStyle(Palette.clayMuted.opacity(0.7))

@@ -1,6 +1,6 @@
 import SwiftUI
 
-// Earthy ClayLab palette — works in light and dark.
+// Earthy Stoneware palette — works in light and dark.
 enum Palette {
     static let bone       = Color("Bone")
     static let boneDeep   = Color("BoneDeep")

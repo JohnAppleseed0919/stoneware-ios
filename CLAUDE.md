@@ -1,35 +1,70 @@
-# ClayLab - Project Instructions
+# Stoneware - Project Instructions
 
 ## App Overview
-iOS app (SwiftUI + SwiftData). Bundle ID: `com.claylab.app`
-App Store Connect ID: `ASC_ID_HERE`. Team ID: `6G3Q27J6NB`
+iOS app (SwiftUI + SwiftData). Pottery studio diary — track every piece from
+idea to finished. Local-first, no accounts, no ads.
+
+- **Bundle ID:** `com.stoneware.app`
+- **Team ID:** `6G3Q27J6NB`
+- **App Store Connect ID:** `ASC_ID_HERE` (fill in after manual ASC creation — see below)
+- **Domain:** https://stoneware.app (Vercel, project `stoneware`)
+- **GitHub:** https://github.com/JohnAppleseed0919/stoneware-ios
 
 ## Project Layout
-- **Xcode project**: `ClayLab/`
-- **Fastlane**: `ClayLab/fastlane/` (Appfile, Fastfile, metadata, screenshots, api_key.json)
-- **Website**: `website/` (if applicable)
-- **Screenshots**: `appstore_screenshots/`
+- **Xcode project:** `Stoneware.xcodeproj/` (regenerate with `xcodegen generate` from repo root)
+- **Source:** `Stoneware/Stoneware/` (SwiftUI views, SwiftData models)
+- **UI tests / screenshots:** `Stoneware/StonewareUITests/`
+- **Fastlane:** `Stoneware/fastlane/`
+- **Website:** `website/`
+- **App Store screenshots:** `appstore_screenshots/` (also auto-generated under `Stoneware/fastlane/screenshots/`)
 
-## App Store Submissions
-Use **fastlane** for all App Store tasks. Never use manual browser automation.
-Always follow `~/Desktop/Apps/app-store-best-practices.md` for metadata, keywords, and submission strategy.
+## Manual step required (one time)
+Apple's ASC API does **not** allow creating apps via API. Register once in the
+App Store Connect web UI:
+
+1. Go to https://appstoreconnect.apple.com/apps → "+" → "New App"
+2. Platforms: iOS
+3. Name: `Stoneware: Pottery Studio Log`
+4. Primary Language: English (U.S.)
+5. Bundle ID: `com.stoneware.app` (already registered at Developer Portal)
+6. SKU: `STONEWARE001`
+7. User Access: Full Access
+8. After creation, grab the numeric Apple ID (ASC ID) and drop it into this
+   file's `ASC_ID_HERE` placeholder.
+
+Bundle ID `com.stoneware.app` was registered via ASC API — no Developer Portal step needed.
+
+## Build, screenshot, submit
 
 ```bash
-cd ClayLab
-fastlane release    # build + upload metadata/screenshots + submit for review
-fastlane submit     # upload existing IPA + submit (skip screenshots)
-fastlane metadata   # upload metadata/screenshots only (no binary, no submit)
-fastlane build      # just build the IPA
+# Regenerate Xcode project (after editing project.yml)
+xcodegen generate
+
+# Build for sim (smoke test)
+xcodebuild -project Stoneware.xcodeproj -scheme Stoneware \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build \
+  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+
+# Capture App Store screenshots via the UI test target (iPhone 17 Pro Max,
+# iPhone 17, iPad Pro 13")
+cd Stoneware && fastlane snapshot run
+
+# Upload metadata + screenshots (requires ASC app to exist first)
+cd Stoneware && fastlane metadata
+
+# Build, upload, and submit for review
+cd Stoneware && fastlane release
 ```
 
-The ASC API key is already configured in `fastlane/api_key.json`.
+Fastlane uses the ASC API key at `Stoneware/fastlane/api_key.json` — no password
+or 2FA required for anything except the one-time app creation above.
 
 ## Key Details
-- Category: CATEGORY_HERE
+- Category: Lifestyle
 - Pricing: Free
-- Privacy: No data collected
-- Encryption: None
+- Privacy: No data collected (everything local via SwiftData)
+- Encryption: None (`ITSAppUsesNonExemptEncryption: false`)
 
 ## User Preferences
 - Maximize automation, minimize manual steps
-- Account: Rick Anderson / support@claylab.app / Claya LLC
+- Account: Rick Anderson / anderson.rh@icloud.com (Apple Dev) / support@stoneware.app / Claya LLC

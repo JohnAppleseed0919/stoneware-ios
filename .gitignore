@@ -10,11 +10,11 @@ xcuserdata/
 *.xcodeproj/xcuserdata/
 
 # Fastlane
-ClayLab/fastlane/report.xml
-ClayLab/fastlane/Preview.html
-ClayLab/fastlane/test_output
-ClayLab/fastlane/api_key.json
-ClayLab/fastlane/README.md
+Stoneware/fastlane/report.xml
+Stoneware/fastlane/Preview.html
+Stoneware/fastlane/test_output
+Stoneware/fastlane/api_key.json
+Stoneware/fastlane/README.md
 **/*.ipa
 **/*.dSYM.zip
 
@@ -22,7 +22,6 @@ ClayLab/fastlane/README.md
 .bundle/
 vendor/
 
-# Web (claylab-web is a separate repo)
-claylab-web/
+# Misc
 node_modules/
 dist/

@@ -1,5 +1,5 @@
 # Cloudflare Pages config — update name to your app's domain
-name = "APP_claylab.app"
+name = "APP_stoneware.app"
 compatibility_date = "2026-03-01"
 
-# Deploy with: npx wrangler pages deploy . --project-name=APP_claylab.app
+# Deploy with: npx wrangler pages deploy . --project-name=APP_stoneware.app

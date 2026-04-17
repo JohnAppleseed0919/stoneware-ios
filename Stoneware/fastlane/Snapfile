@@ -1,0 +1,25 @@
+# Screenshot automation config. Run: fastlane snapshot
+
+devices([
+  "iPhone 17 Pro Max",
+  "iPhone 17",
+  "iPad Pro 13-inch (M5)"
+])
+
+languages(["en-US"])
+
+output_directory("./fastlane/screenshots")
+clear_previous_screenshots(true)
+
+scheme("Stoneware")
+
+project("../Stoneware.xcodeproj")
+
+derived_data_path("../build/DerivedData")
+
+number_of_retries(0)
+stop_after_first_error(true)
+erase_simulator(false)
+reinstall_app(true)
+concurrent_simulators(false)
+headless(true)

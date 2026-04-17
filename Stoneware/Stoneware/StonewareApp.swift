@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct ClayLabApp: App {
+struct StonewareApp: App {
     @State private var units = UnitsManager()
     let modelContainer: ModelContainer
 
@@ -20,7 +20,7 @@ struct ClayLabApp: App {
             let fallback = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
             modelContainer = try! ModelContainer(for: schema, configurations: [fallback])
         }
-        ClayLabApp.seedIfNeeded(container: modelContainer)
+        StonewareApp.seedIfNeeded(container: modelContainer)
     }
 
     var body: some Scene {

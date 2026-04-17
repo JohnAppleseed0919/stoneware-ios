@@ -768,7 +768,7 @@ struct ShrinkageCalculator: View {
                 Text("Shrinkage calculator")
                     .font(.system(size: 24, weight: .semibold, design: .serif))
                     .foregroundStyle(Palette.clay)
-                Text("Measure a reference mark wet and again after firing. ClayLab does the math.")
+                Text("Measure a reference mark wet and again after firing. Stoneware does the math.")
                     .font(.system(size: 13))
                     .foregroundStyle(Palette.clayMuted)
             }

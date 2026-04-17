@@ -170,10 +170,10 @@ private struct Branding: View {
                     .frame(width: 14, height: 3)
                     .offset(y: 9)
             }
-            Text("Clay")
+            Text("Stone")
                 .font(.system(size: 20, weight: .semibold, design: .serif))
                 .foregroundStyle(Palette.clay)
-            + Text("lab")
+            + Text("ware")
                 .font(.system(size: 20, weight: .semibold, design: .serif).italic())
                 .foregroundStyle(Palette.terracotta)
         }

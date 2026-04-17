@@ -11,11 +11,11 @@ enum UnitSystem: String {
 @Observable
 final class UnitsManager {
     var system: UnitSystem {
-        didSet { UserDefaults.standard.set(system.rawValue, forKey: "claylab.units") }
+        didSet { UserDefaults.standard.set(system.rawValue, forKey: "stoneware.units") }
     }
 
     init() {
-        let raw = UserDefaults.standard.string(forKey: "claylab.units") ?? UnitSystem.metric.rawValue
+        let raw = UserDefaults.standard.string(forKey: "stoneware.units") ?? UnitSystem.metric.rawValue
         self.system = UnitSystem(rawValue: raw) ?? .metric
     }
 

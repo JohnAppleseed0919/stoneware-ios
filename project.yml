@@ -1,6 +1,6 @@
-name: ClayLab
+name: Stoneware
 options:
-  bundleIdPrefix: com.claylab
+  bundleIdPrefix: com.stoneware
   deploymentTarget:
     iOS: "17.0"
   createIntermediateGroups: true
@@ -18,22 +18,22 @@ settings:
     ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
     SWIFT_STRICT_CONCURRENCY: minimal
 targets:
-  ClayLab:
+  Stoneware:
     type: application
     platform: iOS
     sources:
-      - path: ClayLab/ClayLab
+      - path: Stoneware/Stoneware
         excludes:
           - "Info.plist"
     resources:
-      - path: ClayLab/ClayLab/Assets.xcassets
+      - path: Stoneware/Stoneware/Assets.xcassets
     info:
-      path: ClayLab/ClayLab/Info.plist
+      path: Stoneware/Stoneware/Info.plist
       properties:
-        CFBundleDisplayName: ClayLab
+        CFBundleDisplayName: Stoneware
         CFBundleName: $(PRODUCT_NAME)
         LSRequiresIPhoneOS: true
-        NSPhotoLibraryUsageDescription: "ClayLab lets you attach photos of your pieces so you can compare glaze results and trim profiles over time. Photos are stored privately on this device."
+        NSPhotoLibraryUsageDescription: "Stoneware lets you attach photos of your pieces so you can compare glaze results and trim profiles over time. Photos are stored privately on this device."
         ITSAppUsesNonExemptEncryption: false
         UIUserInterfaceStyle: Light
         UILaunchScreen:
@@ -49,4 +49,29 @@ targets:
           - UIInterfaceOrientationLandscapeRight
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.claylab.app
+        PRODUCT_BUNDLE_IDENTIFIER: com.stoneware.app
+  StonewareUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: Stoneware/StonewareUITests
+    dependencies:
+      - target: Stoneware
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.stoneware.app.uitests
+        TEST_TARGET_NAME: Stoneware
+schemes:
+  Stoneware:
+    build:
+      targets:
+        Stoneware: all
+        StonewareUITests: [test]
+    test:
+      gatherCoverageData: false
+      targets:
+        - StonewareUITests
+    run:
+      config: Debug
+    archive:
+      config: Release
