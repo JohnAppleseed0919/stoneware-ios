@@ -1,0 +1,135 @@
+default_platform(:ios)
+
+platform :ios do
+
+  before_all do
+    app_store_connect_api_key(
+      key_id: "WM34CP43DM",
+      issuer_id: "7a26209b-a489-4b70-967e-6e67d4e9865e",
+      key_filepath: File.expand_path("~/Desktop/Apps/App Store Connect Key/AuthKey_WM34CP43DM.p8"),
+      in_house: false
+    )
+  end
+
+  desc "Build the app"
+  lane :build do
+    build_app(
+      workspace: "ClayLab.xcodeproj/project.xcworkspace",
+      scheme: "ClayLab",
+      export_method: "app-store",
+      output_directory: "../Export",
+      output_name: "ClayLab.ipa"
+    )
+  end
+
+  desc "Upload metadata and screenshots only (no binary)"
+  lane :metadata do
+    deliver(
+      skip_binary_upload: true,
+      skip_screenshots: false,
+      force: true,
+      submit_for_review: false,
+      automatic_release: true,
+      price_tier: 0,
+      submission_information: {
+        export_compliance_uses_encryption: false,
+        add_id_info_uses_idfa: false
+      },
+      app_rating_config_path: "fastlane/rating_config.json"
+    )
+  end
+
+  desc "Submit a new version for review (build + metadata + screenshots)"
+  lane :release do
+    build
+    deliver(
+      skip_screenshots: false,
+      force: true,
+      submit_for_review: true,
+      automatic_release: true,
+      price_tier: 0,
+      submission_information: {
+        export_compliance_uses_encryption: false,
+        add_id_info_uses_idfa: false
+      },
+      app_rating_config_path: "fastlane/rating_config.json"
+    )
+  end
+
+  desc "Bump build number"
+  lane :bump do
+    increment_build_number(
+      xcodeproj: "ClayLab.xcodeproj"
+    )
+    build_number = get_build_number(xcodeproj: "ClayLab.xcodeproj")
+    UI.success("Build number bumped to #{build_number}")
+  end
+
+  desc "Capture screenshots on all devices"
+  lane :screenshots do
+    capture_screenshots
+  end
+
+  desc "Pre-submission checks"
+  lane :preflight do
+    # Check build number was bumped
+    build_number = get_build_number(xcodeproj: "ClayLab.xcodeproj")
+    UI.message("Current build number: #{build_number}")
+
+    # Check metadata files exist
+    metadata_dir = "fastlane/metadata/en-US"
+    required_files = %w[name.txt description.txt keywords.txt privacy_url.txt support_url.txt]
+    missing = required_files.reject { |f| File.exist?("#{metadata_dir}/#{f}") }
+    UI.user_error!("Missing metadata files: #{missing.join(', ')}") unless missing.empty?
+
+    # Check for placeholder values
+    required_files.each do |f|
+      content = File.read("#{metadata_dir}/#{f}").strip
+      UI.user_error!("#{f} still has placeholder value") if content.include?("_HERE") || content.empty?
+    end
+
+    # Check keywords length
+    keywords = File.read("#{metadata_dir}/keywords.txt").strip
+    UI.user_error!("Keywords exceed 100 chars (#{keywords.length})") if keywords.length > 100
+    UI.important("Keywords: #{keywords.length}/100 chars used") if keywords.length < 90
+
+    # Check privacy URL is reachable
+    privacy_url = File.read("#{metadata_dir}/privacy_url.txt").strip
+    begin
+      require 'net/http'
+      uri = URI(privacy_url)
+      response = Net::HTTP.get_response(uri)
+      UI.user_error!("Privacy URL returned #{response.code}: #{privacy_url}") unless response.is_a?(Net::HTTPSuccess) || response.is_a?(Net::HTTPRedirection)
+      UI.success("Privacy URL is live: #{privacy_url}")
+    rescue => e
+      UI.user_error!("Privacy URL unreachable: #{privacy_url} (#{e.message})")
+    end
+
+    # Check screenshots exist
+    screenshot_dir = "fastlane/screenshots/en-US"
+    if Dir.exist?(screenshot_dir) && Dir.glob("#{screenshot_dir}/*.png").any?
+      count = Dir.glob("#{screenshot_dir}/*.png").length
+      UI.success("#{count} screenshots found")
+    else
+      UI.important("No screenshots in #{screenshot_dir} — run `fastlane screenshots` or add manually")
+    end
+
+    UI.success("Preflight checks passed! Ready to submit.")
+  end
+
+  desc "Quick submit: upload IPA and submit (skip screenshots)"
+  lane :submit do
+    deliver(
+      ipa: "../Export/ClayLab.ipa",
+      skip_screenshots: true,
+      force: true,
+      submit_for_review: true,
+      automatic_release: true,
+      submission_information: {
+        export_compliance_uses_encryption: false,
+        add_id_info_uses_idfa: false
+      }
+    )
+  end
+
+end

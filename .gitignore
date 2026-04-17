@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
+# Fastlane
+ClayLab/fastlane/report.xml
+ClayLab/fastlane/Preview.html
+ClayLab/fastlane/test_output
+ClayLab/fastlane/api_key.json
+ClayLab/fastlane/README.md
+**/*.ipa
+**/*.dSYM.zip
+
+# Ruby
+.bundle/
+vendor/
+
+# Web (claylab-web is a separate repo)
+claylab-web/
+node_modules/
+dist/

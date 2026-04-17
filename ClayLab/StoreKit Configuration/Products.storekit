@@ -1,0 +1,50 @@
+{
+  "identifier" : "00000000-0000-0000-0000-000000000000",
+  "type" : "com.apple.storekit.configuration",
+  "version" : 3,
+  "subscriptionGroups" : [
+    {
+      "id" : "00000000-0000-0000-0000-000000000001",
+      "localizations" : [
+
+      ],
+      "name" : "ClayLab Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "00000000-0000-0000-0000-000000000002",
+          "introductoryOffer" : {
+            "displayPrice" : "0",
+            "internalID" : "00000000-0000-0000-0000-000000000003",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P3D"
+          },
+          "localizations" : [
+            {
+              "description" : "SUBSCRIPTION_DESCRIPTION_HERE",
+              "displayName" : "Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.claylab.app.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly Subscription",
+          "subscriptionGroupID" : "00000000-0000-0000-0000-000000000001",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ]
+}

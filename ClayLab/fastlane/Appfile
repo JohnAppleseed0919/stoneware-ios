@@ -1,0 +1,5 @@
+app_identifier("com.claylab.app")
+apple_id("support@claylab.app")
+team_id("6G3Q27J6NB")
+
+# API key is loaded in Fastfile via app_store_connect_api_key
