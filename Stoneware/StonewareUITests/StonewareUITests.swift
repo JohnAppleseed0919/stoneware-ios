@@ -1,9 +1,10 @@
 import XCTest
 
+@MainActor
 final class StonewareUITests: XCTestCase {
     var app: XCUIApplication!
 
-    override func setUpWithError() throws {
+    override func setUp() async throws {
         continueAfterFailure = false
         app = XCUIApplication()
         setupSnapshot(app)

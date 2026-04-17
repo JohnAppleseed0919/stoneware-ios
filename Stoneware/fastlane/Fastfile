@@ -14,7 +14,7 @@ platform :ios do
   desc "Build the app"
   lane :build do
     build_app(
-      workspace: "Stoneware.xcodeproj/project.xcworkspace",
+      project: "../Stoneware.xcodeproj",
       scheme: "Stoneware",
       export_method: "app-store",
       output_directory: "../Export",
@@ -59,9 +59,9 @@ platform :ios do
   desc "Bump build number"
   lane :bump do
     increment_build_number(
-      xcodeproj: "Stoneware.xcodeproj"
+      xcodeproj: "../Stoneware.xcodeproj"
     )
-    build_number = get_build_number(xcodeproj: "Stoneware.xcodeproj")
+    build_number = get_build_number(xcodeproj: "../Stoneware.xcodeproj")
     UI.success("Build number bumped to #{build_number}")
   end
 
@@ -73,11 +73,11 @@ platform :ios do
   desc "Pre-submission checks"
   lane :preflight do
     # Check build number was bumped
-    build_number = get_build_number(xcodeproj: "Stoneware.xcodeproj")
+    build_number = get_build_number(xcodeproj: "../Stoneware.xcodeproj")
     UI.message("Current build number: #{build_number}")
 
-    # Check metadata files exist
-    metadata_dir = "fastlane/metadata/en-US"
+    # Check metadata files exist (try both fastlane CWD layouts)
+    metadata_dir = ["fastlane/metadata/en-US", "metadata/en-US"].find { |d| Dir.exist?(d) } || "fastlane/metadata/en-US"
     required_files = %w[name.txt description.txt keywords.txt privacy_url.txt support_url.txt]
     missing = required_files.reject { |f| File.exist?("#{metadata_dir}/#{f}") }
     UI.user_error!("Missing metadata files: #{missing.join(', ')}") unless missing.empty?
@@ -105,8 +105,8 @@ platform :ios do
       UI.user_error!("Privacy URL unreachable: #{privacy_url} (#{e.message})")
     end
 
-    # Check screenshots exist
-    screenshot_dir = "fastlane/screenshots/en-US"
+    # Check screenshots exist (try both fastlane CWD layouts)
+    screenshot_dir = ["fastlane/screenshots/en-US", "screenshots/en-US"].find { |d| Dir.exist?(d) } || "fastlane/screenshots/en-US"
     if Dir.exist?(screenshot_dir) && Dir.glob("#{screenshot_dir}/*.png").any?
       count = Dir.glob("#{screenshot_dir}/*.png").length
       UI.success("#{count} screenshots found")
