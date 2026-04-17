@@ -40,24 +40,40 @@ Bundle ID `com.stoneware.app` was registered via ASC API — no Developer Portal
 # Regenerate Xcode project (after editing project.yml)
 xcodegen generate
 
-# Build for sim (smoke test)
+# Build + smoke test on simulator
 xcodebuild -project Stoneware.xcodeproj -scheme Stoneware \
   -destination 'platform=iOS Simulator,name=iPhone 17 Pro' build \
   CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
 
-# Capture App Store screenshots via the UI test target (iPhone 17 Pro Max,
-# iPhone 17, iPad Pro 13")
-cd Stoneware && fastlane snapshot run
+# Capture App Store screenshots — direct xcodebuild test runs faster than
+# `fastlane snapshot` and works the same way (writes to ~/Library/Caches/
+# tools.fastlane/screenshots). Set FASTLANE_SNAPSHOT=YES to make
+# SnapshotHelper save the images.
+for DEVICE_ID in \
+  D5076CE6-B1A8-4FDB-AC03-43CAD174B8D4 \
+  6143C30A-9E79-45B4-B212-458E86556224 \
+  25E1955E-F1D0-4401-A317-277DAA648A32; do
+  xcrun simctl boot "$DEVICE_ID" 2>/dev/null
+  xcodebuild -project Stoneware.xcodeproj -scheme Stoneware \
+    -destination "platform=iOS Simulator,id=$DEVICE_ID" test \
+    CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
+    FASTLANE_SNAPSHOT=YES FASTLANE_LANGUAGE=en-US
+done
+cp ~/Library/Caches/tools.fastlane/screenshots/*.png \
+   Stoneware/fastlane/screenshots/en-US/
 
 # Upload metadata + screenshots (requires ASC app to exist first)
 cd Stoneware && fastlane metadata
 
-# Build, upload, and submit for review
+# Build, upload, and submit for review (handles cert+sigh via API key)
 cd Stoneware && fastlane release
 ```
 
 Fastlane uses the ASC API key at `Stoneware/fastlane/api_key.json` — no password
 or 2FA required for anything except the one-time app creation above.
+
+The simulator UDIDs above are Rick's machine. Use `xcrun simctl list devices`
+to find equivalents on a different machine.
 
 ## Key Details
 - Category: Lifestyle
